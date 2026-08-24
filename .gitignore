@@ -1,0 +1,11 @@
+.env
+cookies.json
+sha3_wasm_bg.wasm
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+*.log
