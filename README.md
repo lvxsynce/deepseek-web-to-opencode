@@ -27,19 +27,6 @@ Do not use this project to bypass access restrictions, account suspensions, rate
 
 The upstream service can suspend an account. The backend detects suspension messages and returns an explicit error, but it cannot restore access or override an upstream decision.
 
-## Security
-
-Never commit or publish any of the following:
-
-- `.env`
-- `cookies.json`
-- Bearer tokens
-- session cookies such as `ds_session_id`
-- captured PoW or HIF headers
-- logs containing request headers or credentials
-
-These files are excluded by `.gitignore`. The token and cookies used during development must be considered compromised if they were pasted into a chat, issue, terminal recording, or public repository. Revoke or rotate them before publishing this project.
-
 ## Requirements
 
 - Windows, macOS, or Linux
@@ -210,20 +197,6 @@ Useful environment variables:
 | `DEEPSEEK_STREAM_TIMEOUT` | `120` | Maximum wait between SSE chunks in seconds |
 | `OPENCODE_HOST` | `127.0.0.1` | Local backend bind address |
 | `OPENCODE_PORT` | `8787` | Local backend port |
-
-## Development Checks
-
-Run the syntax check:
-
-```powershell
-python -m py_compile deepseek_playwright.py deepseek_backend.py
-```
-
-Check the OpenCode configuration is valid JSON:
-
-```powershell
-python -c "import json; json.load(open('opencode.json', encoding='utf-8')); print('opencode.json: ok')"
-```
 
 ## Project Files
 
